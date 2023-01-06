@@ -21,8 +21,8 @@ public class Conexao {
     {
         this.servidor = "localhost";
         this.banco = "Prog1";
-        this.usuario = "postgres";
-        this.senha = "Sophard175";
+        this.usuario = "root";
+        this.senha = "root";
     } 
 
     public boolean conectar (){
@@ -35,5 +35,8 @@ public class Conexao {
         }
     }
     
+    public Connection getConnection(){
+        return conexao;
+    }
     
 }
