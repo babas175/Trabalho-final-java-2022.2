@@ -34,83 +34,76 @@ public class dashboardLoginTela extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
+        jButton2.setBackground(new java.awt.Color(204, 255, 204));
         jButton2.setText("Cadastrar paciente");
+        jButton2.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(jButton2);
+        jButton2.setBounds(6, 137, 185, 20);
 
-        jLabel1.setBackground(new java.awt.Color(51, 51, 255));
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel1.setText("Bem Vindo no Sistema da Clínica Da Alma ");
+        jLabel1.setForeground(new java.awt.Color(0, 153, 51));
+        jLabel1.setText("Welcome To Soul Clinic System");
         jLabel1.setMaximumSize(new java.awt.Dimension(225, 19));
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(90, -10, 330, 74);
 
+        jButton3.setBackground(new java.awt.Color(204, 255, 204));
         jButton3.setText("Agendar paciente");
+        jButton3.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(jButton3);
+        jButton3.setBounds(6, 179, 185, 20);
 
+        jButton4.setBackground(new java.awt.Color(204, 255, 204));
         jButton4.setText("Remover paciente");
+        jButton4.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(jButton4);
+        jButton4.setBounds(6, 329, 185, 20);
 
-        jButton5.setText("Listar Agendar");
+        jButton5.setBackground(new java.awt.Color(204, 255, 204));
+        jButton5.setText("Listar Agenda");
+        jButton5.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(jButton5);
+        jButton5.setBounds(6, 293, 185, 20);
 
+        jButton6.setBackground(new java.awt.Color(204, 255, 204));
         jButton6.setText("Atualizar agendamento");
+        jButton6.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(jButton6);
+        jButton6.setBounds(6, 227, 185, 20);
 
-        jButton7.setBackground(new java.awt.Color(0, 0, 255));
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setBackground(new java.awt.Color(102, 102, 102));
         jButton7.setText("Sair");
+        getContentPane().add(jButton7);
+        jButton7.setBounds(30, 460, 72, 24);
 
+        jButton1.setBackground(new java.awt.Color(204, 255, 204));
         jButton1.setText("Buscar agendamento");
+        jButton1.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(6, 257, 185, 20);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(153, 153, 153)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addGap(83, 83, 83))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addGap(4, 4, 4))
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(157, 157, 157))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(jButton2))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addGap(54, 54, 54))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/matriz-de-bordado-simbolo-medicina-matriz-emb.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-50, 0, 670, 450);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,5 +149,6 @@ public class dashboardLoginTela extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

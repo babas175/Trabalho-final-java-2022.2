@@ -41,9 +41,9 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 0));
-        jLabel1.setText("WELCOME TO OUR CLINIC");
+        jLabel1.setText("WELCOME TO SOUL CLINIC");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(110, 0, 312, 28);
+        jLabel1.setBounds(100, 0, 340, 28);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 0));
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
