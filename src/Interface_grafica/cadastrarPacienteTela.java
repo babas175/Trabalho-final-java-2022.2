@@ -4,6 +4,8 @@
  */
 package Interface_grafica;
 
+import controller.PacienteController;
+import model.Paciente;
 /**
  *
  * @author lubin.lionel

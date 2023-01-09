@@ -33,12 +33,12 @@ public class PacienteClinica extends GenericMetodo {
                 paciente.getEndereco(), paciente.getData_de_nasc());
     }
 
-    public void excluir(long cpf) throws SQLException {
+    public void excluir(String cpf) throws SQLException {
         String delete = "DELETE FROM PACIENTE WHERE cpf = ?";
         delete(delete, cpf);
     }
 
-    public List findContatos() throws SQLException {
+    public List findPaciente() throws SQLException {
         List pacientes = new ArrayList();
 
         String select = "SELECT * FROM PACIENTE";
@@ -65,7 +65,7 @@ public class PacienteClinica extends GenericMetodo {
         return pacientes;
     }
 
-    public Paciente Buscar_por_cpf(String cpf) throws SQLException {
+    public Paciente buscar_por_cpf(String cpf) throws SQLException {
         String select = "SELECT * FROM PACIENTE WHERE cpf = ?";
         Paciente paciente = null;
         PreparedStatement stmt = 
