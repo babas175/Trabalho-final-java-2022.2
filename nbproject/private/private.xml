@@ -3,13 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/jacquet-l/GitHUb/Trabalho-final-java-2022.2/src/Interface_grafica/dashboardLoginTela.java</file>
-            <file>file:/home/jacquet-l/GitHUb/Trabalho-final-java-2022.2/src/Interface_grafica/loginTela.java</file>
-            <file>file:/home/jacquet-l/GitHUb/Trabalho-final-java-2022.2/src/Interface_grafica/cadastrarPacienteTela.java</file>
-            <file>file:/home/jacquet-l/GitHUb/Trabalho-final-java-2022.2/src/Interface_grafica/removerPacienteTela.java</file>
-            <file>file:/home/jacquet-l/GitHUb/Trabalho-final-java-2022.2/src/Interface_grafica/PaginaDeBemVindo.java</file>
-            <file>file:/home/jacquet-l/GitHUb/Trabalho-final-java-2022.2/src/Interface_grafica/agendarPacienteTela.java</file>
-            <file>file:/home/jacquet-l/GitHUb/Trabalho-final-java-2022.2/src/Interface_grafica/atualizarPacienteTela.java</file>
+            <file>file:/C:/Users/lubin.lionel/Documents/NetBeansProjects/Trabalho_final_Prog_1/src/Action/PacienteClinica.java</file>
+            <file>file:/C:/Users/lubin.lionel/Documents/NetBeansProjects/Trabalho_final_Prog_1/src/Interface_grafica/cadastrarPacienteTela.java</file>
+            <file>file:/C:/Users/lubin.lionel/Documents/NetBeansProjects/Trabalho_final_Prog_1/src/Interface_grafica/agendarPacienteTela.java</file>
+            <file>file:/C:/Users/lubin.lionel/Documents/NetBeansProjects/Trabalho_final_Prog_1/src/Action/Trabalho_final_Prog_1.java</file>
+            <file>file:/C:/Users/lubin.lionel/Documents/NetBeansProjects/Trabalho_final_Prog_1/src/Action/GenericMetodo.java</file>
+            <file>file:/C:/Users/lubin.lionel/Documents/NetBeansProjects/Trabalho_final_Prog_1/src/Interface_grafica/atualizarPacienteTela.java</file>
+            <file>file:/C:/Users/lubin.lionel/Documents/NetBeansProjects/Trabalho_final_Prog_1/src/Interface_grafica/PaginaDeBemVindo.java</file>
+            <file>file:/C:/Users/lubin.lionel/Documents/NetBeansProjects/Trabalho_final_Prog_1/src/Action/Conexao.java</file>
+            <file>file:/C:/Users/lubin.lionel/Documents/NetBeansProjects/Trabalho_final_Prog_1/src/model/Paciente.java</file>
+            <file>file:/C:/Users/lubin.lionel/Documents/NetBeansProjects/Trabalho_final_Prog_1/src/model/Agendamento.java</file>
+            <file>file:/C:/Users/lubin.lionel/Documents/NetBeansProjects/Trabalho_final_Prog_1/src/model/Medico.java</file>
         </group>
     </open-files>
 </project-private>

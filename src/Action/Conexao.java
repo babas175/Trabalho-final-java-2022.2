@@ -9,34 +9,25 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexao {
-    private String servidor;
-    private String banco;
-    private String usuario;
-    private String senha;
-    private Connection conexao;
 
+	private static final String URL_MYSQL = "jdbc:mysql://localhost/clinica";
+		
+	private static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
+		
+	private static final String USER = "root";
+	
+	private static final String PASS = "";
 
-
-    public Conexao()
-    {
-        this.servidor = "localhost";
-        this.banco = "Prog1";
-        this.usuario = "root";
-        this.senha = "root";
-    } 
-
-    public boolean conectar (){
-        try
-        {
-            this.conexao = DriverManager.getConnection("jdbc:mysql://"+this.servidor+"/"+this.banco,this.usuario,this.senha);
-            return true;
-        }catch (SQLException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
-    
-    public Connection getConnection(){
-        return conexao;
-    }
-    
+	public static Connection getConnection() {
+		System.out.println("Conectando ao Banco de Dados");
+		try {
+			Class.forName(DRIVER_CLASS);
+			return DriverManager.getConnection(URL_MYSQL, USER, PASS);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return null;
+	}
 }

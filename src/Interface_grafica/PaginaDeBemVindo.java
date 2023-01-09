@@ -43,7 +43,7 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 153, 0));
         jLabel1.setText("WELCOME TO SOUL CLINIC");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(100, 0, 340, 28);
+        jLabel1.setBounds(210, 0, 340, 28);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 0));
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
@@ -51,7 +51,7 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
         jButton1.setText("Cadastrar");
         jButton1.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jButton1);
-        jButton1.setBounds(260, 420, 80, 19);
+        jButton1.setBounds(330, 390, 80, 19);
 
         jButton2.setBackground(new java.awt.Color(0, 153, 0));
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
@@ -59,7 +59,7 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
         jButton2.setText("Login");
         jButton2.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jButton2);
-        jButton2.setBounds(260, 460, 81, 20);
+        jButton2.setBounds(330, 440, 81, 20);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 114, 0, 0);
 
@@ -69,7 +69,7 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
         jLabel3.setText("Fazer seu Cadastro");
         jLabel3.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 420, 160, 24);
+        jLabel3.setBounds(140, 390, 160, 24);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 2, 18)); // NOI18N
@@ -77,11 +77,11 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
         jLabel4.setText("Já tem Cadastro ?");
         jLabel4.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(50, 460, 160, 20);
+        jLabel4.setBounds(140, 440, 160, 20);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Clínica-Médica.jpeg"))); // NOI18N
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(-150, 30, 670, 580);
+        jLabel5.setBounds(-140, 30, 920, 620);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
