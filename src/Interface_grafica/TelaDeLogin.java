@@ -139,7 +139,11 @@ public class TelaDeLogin extends javax.swing.JFrame {
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, -1, -1));
         jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 150, -1));
 
+<<<<<<< HEAD
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 650, 590));
+=======
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 20, 560, 780));
+>>>>>>> 3ad4787aafcfe242d70dfac44b2f51bcaea06aff
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 800, 800));
 
