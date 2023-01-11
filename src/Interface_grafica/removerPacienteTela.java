@@ -4,6 +4,12 @@
  */
 package Interface_grafica;
 
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+import controller.PacienteController;
+
 /**
  *
  * @author lubin.lionel
@@ -16,6 +22,7 @@ public class removerPacienteTela extends javax.swing.JFrame {
     public removerPacienteTela() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,8 +38,8 @@ public class removerPacienteTela extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        txtCpf = new javax.swing.JTextField();
+        btRemover= new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
@@ -50,15 +57,21 @@ public class removerPacienteTela extends javax.swing.JFrame {
 
         jLabel3.setText("CPF");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TxtCpfValidation();
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 255));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Remover");
+        btRemover.setBackground(new java.awt.Color(51, 51, 255));
+        btRemover.setForeground(new java.awt.Color(255, 255, 255));
+        btRemover.setText("Remover");
+
+        btRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onClickRemover();
+            }
+        });
 
         jLabel5.setText("Digite o CPF do paciente a ser removido");
 
@@ -83,11 +96,11 @@ public class removerPacienteTela extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
-                            .addComponent(jButton2)
+                            .addComponent(btRemover)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -107,14 +120,41 @@ public class removerPacienteTela extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
-                .addComponent(jButton2)
+                .addComponent(btRemover)
                 .addContainerGap(189, Short.MAX_VALUE))
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
+
+    private void TxtCpfValidation(){
+        if (txtCpf==null){
+            JOptionPane.showMessageDialog(this, "Campo invalido");
+        }
+    }
+    
+    private void onClickRemover() {
+        TxtCpfValidation();
+        PacienteController paciente = new PacienteController();
+        String cpf = txtCpf.getText();
+        try {
+            paciente.excluir(cpf);
+            JOptionPane.showMessageDialog(this, "Contato excluido com sucesso!");
+            clearFields();
+            
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, 
+				"Nao foi possivel excluir esse paciente" + 
+				e.getLocalizedMessage()
+			);
+        }
+    }
+    private void clearFields() {
+        txtCpf.setText("");
+       
+    }
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -157,12 +197,12 @@ public class removerPacienteTela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btRemover;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtCpf;
     // End of variables declaration//GEN-END:variables
 }

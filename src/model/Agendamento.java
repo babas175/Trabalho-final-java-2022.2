@@ -10,8 +10,9 @@ package model;
  */
 public class Agendamento {
     private String cpf;
-    private String data_do_agendamento;
+    private String data_agendamento;
     private String status;
+    private String observacao;
 
     /**
      * @return the cpf
@@ -28,17 +29,17 @@ public class Agendamento {
     }
 
     /**
-     * @return the data_do_agen
+     * @return the data_agendamento
      */
-    public String getData_do_agen() {
-        return data_do_agendamento;
+    public String getData_agendamento() {
+        return data_agendamento;
     }
 
     /**
-     * @param data_do_agen the data_do_agen to set
+     * @param data_agendamento the data_agendamento to set
      */
-    public void setData_do_agen(String data_do_agen) {
-        this.data_do_agendamento = data_do_agen;
+    public void setData_agendamento(String data_agendamento) {
+        this.data_agendamento = data_agendamento;
     }
 
     /**
@@ -53,5 +54,19 @@ public class Agendamento {
      */
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    /**
+     * @return the observacao
+     */
+    public String getObservacao() {
+        return observacao;
+    }
+
+    /**
+     * @param observacao the observacao to set
+     */
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
     }
 }

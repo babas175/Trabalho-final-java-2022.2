@@ -17,6 +17,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 public class PacienteClinica extends GenericMetodo {
 
     public void salvar(Paciente paciente) throws SQLException {
@@ -26,16 +28,16 @@ public class PacienteClinica extends GenericMetodo {
     }
 
     public void alterar(Paciente paciente) throws SQLException {
-        String update = "UPDATE PACIENTE " +
-                "SET cpf =?, nome = ?, sobrenome = ?, endereco=?, data_de_nasc = ? " +
-                "WHERE id = ?";
+        String update = "UPDATE PACIENTE SET cpf =?, nome = ?, sobrenome = ?, endereco=?, data_de_nasc = ? WHERE cpf = ?";
         update(update, paciente.getCpf(), paciente.getNome(), paciente.getSobrenome(), 
                 paciente.getEndereco(), paciente.getData_de_nasc());
     }
 
+
     public void excluir(String cpf) throws SQLException {
         String delete = "DELETE FROM PACIENTE WHERE cpf = ?";
-        delete(delete, cpf);
+            delete(delete, cpf);
+        
     }
 
     public List findPaciente() throws SQLException {
