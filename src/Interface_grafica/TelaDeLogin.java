@@ -5,6 +5,14 @@
 
 package Interface_grafica;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jacquet-l
@@ -26,10 +34,6 @@ public class TelaDeLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -44,6 +48,8 @@ public class TelaDeLogin extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
 
+
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -51,29 +57,6 @@ public class TelaDeLogin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(102, 102, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 255));
-        jLabel2.setText("CLINIC");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 90, -1));
-
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel3.setText("SOUL");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel4.setText("SOUL");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/undraw_building_websites_i78t.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 58, 870, 720));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 830));
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,6 +69,19 @@ public class TelaDeLogin extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
+        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
+        jPasswordField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        
+        
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 50, -1));
 
         jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
@@ -107,7 +103,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("PassWord :");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,23 +120,30 @@ public class TelaDeLogin extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("SIGNUP");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 510, 130, 40));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 130, 40));
 
         jButton2.setBackground(new java.awt.Color(255, 51, 51));
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("LOGIN");
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 130, 40));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onClickLogin();
+            }
+        });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 490, 130, 40));
 
         jLabel12.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("UserName :");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, -1, -1));
         jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, 150, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, 560, 780));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 650, 590));
 
-        setSize(new java.awt.Dimension(1528, 828));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 800, 800));
+
+        setSize(new java.awt.Dimension(860, 721));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -148,6 +151,33 @@ public class TelaDeLogin extends javax.swing.JFrame {
 System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    public void onClickLogin(){
+        public void actionPerformed() {
+            String userName = jTextField1.getText();
+            String password = jPasswordField1.getText();
+            try {
+                Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/clinica",
+                    "root", "");
+
+                PreparedStatement st = (PreparedStatement) connection
+                    .prepareStatement("Select id, senha from paciente where id=? and senha=?");
+
+                st.setString(1, userName);
+                st.setString(2, password);
+                ResultSet rs = st.executeQuery();
+                if (rs.next()) {
+                    JOptionPane.showMessageDialog(jButton2, "You have successfully logged in");
+                } else {
+                    JOptionPane.showMessageDialog(jButton2, "Wrong Username & Password");
+                }
+            } catch (SQLException sqlException) {
+                sqlException.printStackTrace();
+            }
+        }
     /**
      * @param args the command line arguments
      */
@@ -190,10 +220,6 @@ System.exit(0);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

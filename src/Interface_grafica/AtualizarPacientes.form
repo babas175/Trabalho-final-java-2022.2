@@ -37,20 +37,17 @@
                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jFormattedTextField1" pref="187" max="32767" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" pref="59" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jFormattedTextField2" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jFormattedTextField3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jFormattedTextField4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jFormattedTextField5" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="31" max="32767" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <Component id="jFormattedTextField1" pref="187" max="32767" attributes="0"/>
+                              <Component id="jLabel2" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jFormattedTextField2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jFormattedTextField3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jFormattedTextField4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jFormattedTextField5" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
@@ -112,6 +109,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -122,6 +122,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField2">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>

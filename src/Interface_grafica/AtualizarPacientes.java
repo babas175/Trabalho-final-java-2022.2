@@ -4,6 +4,12 @@
  */
 package Interface_grafica;
 
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+import controller.PacienteController;
+
 /**
  *
  * @author jacquet-l
@@ -46,21 +52,55 @@ public class AtualizarPacientes extends javax.swing.JFrame {
         jLabel1.setText("Atualizar Dados do  Paciente");
 
         jLabel2.setText("CPF :");
+        
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField2ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel3.setText("Nome :");
 
+        jFormattedTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField2ActionPerformed(evt);
+            }
+        });
+
         jLabel4.setText("Sobrenome:");
+        jFormattedTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField2ActionPerformed(evt);
+            }
+        });
 
-        jLabel5.setText("Data de Nacimento");
+        jLabel5.setText("Endereço");
+        jFormattedTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField2ActionPerformed(evt);
+            }
+        });
 
-        jLabel6.setText("Endereço");
+        jLabel6.setText("Data de Nacimento");
+        jFormattedTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField2ActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setText("Voltar");
 
+
         jButton2.setBackground(new java.awt.Color(0, 255, 51));
         jButton2.setText("Atualizar");
+
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+               onClickAtualizar();
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,19 +118,17 @@ public class AtualizarPacientes extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jFormattedTextField2)
-                                    .addComponent(jFormattedTextField3)
-                                    .addComponent(jFormattedTextField4)
-                                    .addComponent(jFormattedTextField5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel4)
+                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3)
+                                .addComponent(jFormattedTextField2)
+                                .addComponent(jFormattedTextField3)
+                                .addComponent(jFormattedTextField4)
+                                .addComponent(jFormattedTextField5)))
                         .addGap(164, 164, 164)
                         .addComponent(jButton2)
                         .addGap(13, 13, 13)))
@@ -130,6 +168,33 @@ public class AtualizarPacientes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField2ActionPerformed
+
+    private void onClickAtualizar() {
+        PacienteController paciente = new PacienteController();
+        try {
+            paciente.alterar(jFormattedTextField1.getText(), jFormattedTextField2.getText(), jFormattedTextField3.getText(), jFormattedTextField4.getText(), jFormattedTextField5.getText());
+            JOptionPane.showMessageDialog(this, "Paciente alterado com sucesso !");
+            clearFields();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Nao foi possivel alterar esse paciente !" + e.getLocalizedMessage());
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, 
+				"Invalido " + 
+				e.getLocalizedMessage());
+        }
+    }
+
+    private void clearFields() {
+        jFormattedTextField1.setText("");
+        jFormattedTextField2.setText("");
+        jFormattedTextField3.setText("");
+        jFormattedTextField4.setText("");
+        jFormattedTextField5.setText("");
+    }
 
     /**
      * @param args the command line arguments

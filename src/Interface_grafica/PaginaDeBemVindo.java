@@ -33,10 +33,10 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 300));
-        setPreferredSize(new java.awt.Dimension(400, 300));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
@@ -57,6 +57,13 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Login");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+               onClickLogin();
+            }
+        });
+
+
         jButton2.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jButton2);
         jButton2.setBounds(330, 440, 81, 20);
@@ -80,11 +87,29 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
         jLabel4.setBounds(140, 440, 160, 20);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Clínica-Médica.jpeg"))); // NOI18N
+        jLabel5.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jLabel5InputMethodTextChanged(evt);
+            }
+        });
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(-140, 30, 920, 620);
+        jLabel5.setBounds(-130, 40, 920, 620);
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(520, 490, 50, 10);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    public void onClickLogin(){
+        UserLogin userLogin = new UserLogin();
+        userLogin.setVisible(true);
+    }
+
+    private void jLabel5InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jLabel5InputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5InputMethodTextChanged
 
     /**
      * @param args the command line arguments
@@ -129,5 +154,6 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

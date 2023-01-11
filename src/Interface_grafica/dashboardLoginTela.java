@@ -8,12 +8,12 @@ package Interface_grafica;
  *
  * @author lubin.lionel
  */
-public class dashboardLoginTela extends javax.swing.JFrame {
+public class DashboardLoginTela extends javax.swing.JFrame {
 
     /**
      * Creates new form dashboardLoginTela
      */
-    public dashboardLoginTela() {
+    public DashboardLoginTela() {
         initComponents();
     }
 
@@ -43,7 +43,7 @@ public class dashboardLoginTela extends javax.swing.JFrame {
         jButton2.setText("Cadastrar paciente");
         jButton2.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jButton2);
-        jButton2.setBounds(6, 137, 185, 20);
+        jButton2.setBounds(10, 140, 185, 18);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
@@ -57,30 +57,30 @@ public class dashboardLoginTela extends javax.swing.JFrame {
         jButton3.setText("Agendar paciente");
         jButton3.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jButton3);
-        jButton3.setBounds(6, 179, 185, 20);
+        jButton3.setBounds(10, 180, 185, 18);
 
         jButton4.setBackground(new java.awt.Color(204, 255, 204));
         jButton4.setText("Remover paciente");
         jButton4.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jButton4);
-        jButton4.setBounds(6, 329, 185, 20);
+        jButton4.setBounds(10, 340, 185, 18);
 
         jButton5.setBackground(new java.awt.Color(204, 255, 204));
         jButton5.setText("Listar Agenda");
         jButton5.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jButton5);
-        jButton5.setBounds(6, 293, 185, 20);
+        jButton5.setBounds(10, 300, 185, 18);
 
         jButton6.setBackground(new java.awt.Color(204, 255, 204));
         jButton6.setText("Atualizar agendamento");
         jButton6.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jButton6);
-        jButton6.setBounds(6, 227, 185, 20);
+        jButton6.setBounds(10, 220, 185, 18);
 
         jButton7.setBackground(new java.awt.Color(102, 102, 102));
         jButton7.setText("Sair");
         getContentPane().add(jButton7);
-        jButton7.setBounds(30, 460, 72, 24);
+        jButton7.setBounds(30, 460, 49, 22);
 
         jButton1.setBackground(new java.awt.Color(204, 255, 204));
         jButton1.setText("Buscar agendamento");
@@ -91,7 +91,7 @@ public class dashboardLoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(6, 257, 185, 20);
+        jButton1.setBounds(10, 260, 185, 18);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/matriz-de-bordado-simbolo-medicina-matriz-emb.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -122,20 +122,20 @@ public class dashboardLoginTela extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(dashboardLoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardLoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(dashboardLoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardLoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(dashboardLoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardLoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(dashboardLoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardLoginTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new dashboardLoginTela().setVisible(true);
+                new DashboardLoginTela().setVisible(true);
             }
         });
     }
