@@ -56,6 +56,11 @@ public class DashboardLoginTela extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(204, 255, 204));
         jButton3.setText("Agendar paciente");
         jButton3.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3);
         jButton3.setBounds(10, 180, 185, 18);
 
@@ -96,7 +101,7 @@ public class DashboardLoginTela extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/matriz-de-bordado-simbolo-medicina-matriz-emb.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(-50, 0, 670, 450);
+        jLabel2.setBounds(0, 0, 600, 520);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -104,6 +109,10 @@ public class DashboardLoginTela extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

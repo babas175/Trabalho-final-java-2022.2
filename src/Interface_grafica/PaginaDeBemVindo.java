@@ -53,6 +53,12 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(330, 390, 80, 19);
 
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onClickCadastrar();
+            }
+        });
+
         jButton2.setBackground(new java.awt.Color(0, 153, 0));
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,6 +111,12 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
     public void onClickLogin(){
         UserLogin userLogin = new UserLogin();
         userLogin.setVisible(true);
+    }
+
+    public void onClickCadastrar(){
+        CadastroMedico medico = new CadastroMedico();
+                medico.setVisible((true));
+        
     }
 
     private void jLabel5InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jLabel5InputMethodTextChanged
