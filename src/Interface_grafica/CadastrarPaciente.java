@@ -60,6 +60,7 @@ public class CadastrarPaciente extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(0, 255, 0));
         jButton2.setText("Cadastrar");
+        jButton2.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
