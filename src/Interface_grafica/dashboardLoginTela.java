@@ -69,6 +69,11 @@ public class DashboardLoginTela extends javax.swing.JFrame {
         jButton4.setBorder(new javax.swing.border.MatteBorder(null));
         getContentPane().add(jButton4);
         jButton4.setBounds(10, 340, 185, 18);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onClickRemover();
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(204, 255, 204));
         jButton5.setText("Listar Agenda");
@@ -86,6 +91,7 @@ public class DashboardLoginTela extends javax.swing.JFrame {
         jButton7.setText("Sair");
         getContentPane().add(jButton7);
         jButton7.setBounds(30, 460, 49, 22);
+        
 
         jButton1.setBackground(new java.awt.Color(204, 255, 204));
         jButton1.setText("Buscar agendamento");
@@ -114,6 +120,10 @@ public class DashboardLoginTela extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    public void onClickRemover(){
+        removerPacienteTela remover = new removerPacienteTela();
+        remover.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */

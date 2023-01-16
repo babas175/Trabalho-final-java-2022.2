@@ -4,11 +4,15 @@
  */
 package Interface_grafica;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
-import controller.PacienteController;
+
 
 /**
  *
@@ -48,7 +52,7 @@ public class AtualizarPacientes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); 
         jLabel1.setText("Atualizar Dados do  Paciente");
 
         jLabel2.setText("CPF :");
@@ -59,7 +63,7 @@ public class AtualizarPacientes extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 15)); 
         jLabel3.setText("Nome :");
 
         jFormattedTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -169,42 +173,42 @@ public class AtualizarPacientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField2ActionPerformed
-
-    private void onClickAtualizar() {
-        PacienteController paciente = new PacienteController();
-        try {
-            paciente.alterar(jFormattedTextField1.getText(), jFormattedTextField2.getText(), jFormattedTextField3.getText(), jFormattedTextField4.getText(), jFormattedTextField5.getText());
-            JOptionPane.showMessageDialog(this, "Paciente alterado com sucesso !");
-            clearFields();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, "Nao foi possivel alterar esse paciente !" + e.getLocalizedMessage());
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(this, 
-				"Invalido " + 
-				e.getLocalizedMessage());
-        }
+    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {
+        
     }
 
-    private void clearFields() {
-        jFormattedTextField1.setText("");
-        jFormattedTextField2.setText("");
-        jFormattedTextField3.setText("");
-        jFormattedTextField4.setText("");
-        jFormattedTextField5.setText("");
+    public void onClickAtualizar() {
+        String cpf = jFormattedTextField1.getText();
+        String nome = jFormattedTextField2.getText();
+        String sobrenome = jFormattedTextField3.getText();
+        String endereco = jFormattedTextField4.getText();
+        String data_nasc =jFormattedTextField5.getText();
+        try {
+            Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/clinica",
+                "root", "");
+
+            PreparedStatement st = (PreparedStatement) connection
+                .prepareStatement("Update paciente2 set cpf =?, nome = ?, sobrenome = ?, endereco=?, data_de_nasc = ? where cpf = ?");
+            st.setString(1, cpf);
+            st.setString(2, nome);
+            st.setString(3, sobrenome);
+            st.setString(4, endereco);
+            st.setString(5, data_nasc);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(this, "Atualizaçao feita com sucesso ! ");
+            } else {
+                JOptionPane.showMessageDialog(jButton2, "Usuario e Senha nao confere ! ");
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
     }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -231,7 +235,6 @@ public class AtualizarPacientes extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JFormattedTextField jFormattedTextField1;
@@ -245,5 +248,4 @@ public class AtualizarPacientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    // End of variables declaration//GEN-END:variables
 }
