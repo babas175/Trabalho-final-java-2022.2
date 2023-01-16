@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Interface_grafica;
 
 
@@ -24,7 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.tools.JavaFileManager.Location;
+
 
 public class UserLogin extends JFrame {
 
@@ -35,9 +32,7 @@ public class UserLogin extends JFrame {
     private JLabel label;
     private JPanel contentPane;
 
-    /**
-     * Launch the application.
-     */
+
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -51,9 +46,7 @@ public class UserLogin extends JFrame {
         });
     }
 
-    /**
-     * Create the frame.
-     */
+   
     public UserLogin() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 190, 1014, 597);
@@ -116,7 +109,6 @@ public class UserLogin extends JFrame {
                         DashboardLoginTela loginTela = new DashboardLoginTela();
                         loginTela.setVisible((true));
                     } else {
-                        JOptionPane.showMessageDialog(btnNewButton, "Usuario e Senha nao confere ! ");
                         JOptionPane.showMessageDialog(btnNewButton, "Usuario e Senha nao confere ! ");
                     }
                 } catch (SQLException sqlException) {
