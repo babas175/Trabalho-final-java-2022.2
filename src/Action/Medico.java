@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class Medico extends GenericMetodo {
 
     public void salvar(model.Medico medico) throws SQLException {
-        String insert = "INSERT INTO MEDICO(id, senha, email) VALUES(?,?,?)";
+        String insert = "INSERT INTO medico(id, senha, email) VALUES(?,?,?)";
         save(insert, medico.getId(),medico.getSenha(), medico.getEmail());
     }
 }

@@ -4,6 +4,8 @@
  */
 package Interface_grafica;
 
+import Action.AgendaPaciente;
+
 /**
  *
  * @author jacquet
@@ -34,6 +36,7 @@ public class DashboardLoginTela extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,12 +48,18 @@ public class DashboardLoginTela extends javax.swing.JFrame {
         jButton1.setText("Cadastrar Paciente");
         jButton1.setBorder(new javax.swing.border.MatteBorder(null));
 
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OnclickCadastrar();
+            }
+        });
+
         jButton2.setBackground(new java.awt.Color(0, 153, 0));
         jButton2.setText("Agendar Paciente");
         jButton2.setBorder(new javax.swing.border.MatteBorder(null));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                OnclickAgendarPaciente();
             }
         });
 
@@ -59,16 +68,16 @@ public class DashboardLoginTela extends javax.swing.JFrame {
         jButton3.setBorder(new javax.swing.border.MatteBorder(null));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                OnclickAtualizarPaciente();
             }
         });
 
         jButton4.setBackground(new java.awt.Color(0, 153, 0));
-        jButton4.setText("Busacar Agendamento");
+        jButton4.setText("Buscar Agendamento");
         jButton4.setBorder(new javax.swing.border.MatteBorder(null));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                  OnclicBuscarAgendamento();                                                                      
             }
         });
 
@@ -77,7 +86,8 @@ public class DashboardLoginTela extends javax.swing.JFrame {
         jButton5.setBorder(new javax.swing.border.MatteBorder(null));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                OnclicListar();
+                
             }
         });
 
@@ -86,11 +96,21 @@ public class DashboardLoginTela extends javax.swing.JFrame {
         jButton6.setBorder(new javax.swing.border.MatteBorder(null));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                OnclicRemoverPaciente();
             }
         });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icone3.png"))); // NOI18N
+
+        jButton7.setBackground(new java.awt.Color(0, 153, 0));
+        jButton7.setText("Buscar Paciente");
+        jButton7.setBorder(new javax.swing.border.MatteBorder(null));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OnclicBuscarPaciente();
+            }
+        });
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,13 +123,14 @@ public class DashboardLoginTela extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton4)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(13, 13, 13))
@@ -133,6 +154,8 @@ public class DashboardLoginTela extends javax.swing.JFrame {
                         .addComponent(jButton5)
                         .addGap(31, 31, 31)
                         .addComponent(jButton6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton7)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -166,6 +189,52 @@ public class DashboardLoginTela extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+
+    public void OnclickCadastrar(){
+        CadastrarPaciente paciente = new CadastrarPaciente();
+        paciente.setVisible(true);
+    } 
+
+    public void OnclickAgendarPaciente(){
+        agendarPacienteTela agenda = new agendarPacienteTela();
+        agenda.setVisible(true);
+        
+    }
+
+    public void OnclickAtualizarPaciente(){
+        atualizarPacienteTela atuaTela = new atualizarPacienteTela();
+        atuaTela.setVisible(true);
+        
+    }
+
+    public void OnclicBuscarPaciente(){
+        Buscar buscar = new Buscar();
+        buscar.setVisible(true);
+        
+    }
+
+    public void OnclicListar(){
+        Buscar bus = new Buscar();
+        bus.setVisible(true);
+        
+    }
+
+    public void OnclicRemoverPaciente(){
+        removerPacienteTela remov = new removerPacienteTela();
+        remov.setVisible(true);
+        
+    }
+
+    public void OnclicBuscarAgendamento(){
+        BuscarAgendamento agend = new BuscarAgendamento();
+        agend.setVisible(true);
+    }
+
+
+
+    
+
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -205,6 +274,7 @@ public class DashboardLoginTela extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables

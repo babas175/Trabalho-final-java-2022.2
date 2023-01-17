@@ -198,7 +198,7 @@ public class AtualizarPacientes extends javax.swing.JFrame {
             if (rs.next()) {
                 JOptionPane.showMessageDialog(this, "Atualizaçao feita com sucesso ! ");
             } else {
-                JOptionPane.showMessageDialog(jButton2, "Usuario e Senha nao confere ! ");
+                JOptionPane.showMessageDialog(jButton2, "Usuario nao confere ! ");
             }
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
