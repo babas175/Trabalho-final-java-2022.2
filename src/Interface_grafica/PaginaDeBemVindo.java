@@ -53,7 +53,7 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 2, 14)); // NOI18N
         jLabel3.setText("Já tem cadastro?");
 
-        jButton2.setBackground(new java.awt.Color(51, 204, 0));
+        jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setText("Login");
         jButton2.setBorder(new javax.swing.border.MatteBorder(null));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -94,11 +94,11 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
                         .addGap(168, 168, 168)
                         .addComponent(jLabel2)
                         .addGap(3, 3, 3)
-                        .addComponent(jButton1)
-                        .addGap(60, 60, 60)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(jButton2))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(jLabel5)))
