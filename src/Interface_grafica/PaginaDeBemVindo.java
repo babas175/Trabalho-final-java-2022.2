@@ -48,6 +48,13 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(51, 204, 0));
         jButton1.setText("Cadastrar");
+
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OnClickCadastrar();
+            }
+        });
+
         jButton1.setBorder(new javax.swing.border.MatteBorder(null));
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 2, 14)); // NOI18N
@@ -55,10 +62,12 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setText("Login");
+      
+
         jButton2.setBorder(new javax.swing.border.MatteBorder(null));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                OnClickLogin();
             }
         });
 
@@ -111,7 +120,15 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+    public void OnClickLogin(){
+        UserLogin user = new UserLogin();
+        user.setVisible((true));
+    }
 
+    public void OnClickCadastrar(){
+        CadastroMedico cad = new CadastroMedico();
+        cad.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
