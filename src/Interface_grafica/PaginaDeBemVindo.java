@@ -37,60 +37,41 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 300));
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 0));
         jLabel1.setText("WELCOME TO SOUL CLINIC");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(210, 0, 340, 28);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 340, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 153, 0));
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Cadastrar");
         jButton1.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(jButton1);
-        jButton1.setBounds(330, 390, 80, 19);
-
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onClickCadastrar();
-            }
-        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 80, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 153, 0));
         jButton2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Login");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-               onClickLogin();
-            }
-        });
-
-
         jButton2.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(jButton2);
-        jButton2.setBounds(330, 440, 81, 20);
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 114, 0, 0);
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 440, 81, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 114, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 2, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 153, 0));
         jLabel3.setText("Fazer seu Cadastro");
         jLabel3.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(140, 390, 160, 24);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 160, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 2, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 0));
         jLabel4.setText("Já tem Cadastro ?");
         jLabel4.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(140, 440, 160, 20);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 160, 20));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Clínica-Médica.jpeg"))); // NOI18N
         jLabel5.addInputMethodListener(new java.awt.event.InputMethodListener() {
@@ -100,13 +81,15 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
                 jLabel5InputMethodTextChanged(evt);
             }
         });
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(-130, 40, 920, 620);
-        getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(520, 490, 50, 10);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 660, 530));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 490, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel5InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jLabel5InputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5InputMethodTextChanged
 
     public void onClickLogin(){
         UserLogin userLogin = new UserLogin();
@@ -118,10 +101,6 @@ public class PaginaDeBemVindo extends javax.swing.JFrame {
                 medico.setVisible((true));
         
     }
-
-    private void jLabel5InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jLabel5InputMethodTextChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel5InputMethodTextChanged
 
     /**
      * @param args the command line arguments

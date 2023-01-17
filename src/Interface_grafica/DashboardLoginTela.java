@@ -37,21 +37,19 @@ public class DashboardLoginTela extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton2.setBackground(new java.awt.Color(204, 255, 204));
         jButton2.setText("Cadastrar paciente");
         jButton2.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(jButton2);
-        jButton2.setBounds(10, 140, 185, 18);
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 185, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 51));
         jLabel1.setText("Welcome To Soul Clinic System");
         jLabel1.setMaximumSize(new java.awt.Dimension(225, 19));
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(90, -10, 330, 74);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, -10, 330, 74));
 
         jButton3.setBackground(new java.awt.Color(204, 255, 204));
         jButton3.setText("Agendar paciente");
@@ -61,31 +59,26 @@ public class DashboardLoginTela extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(10, 180, 185, 18);
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 185, -1));
 
         jButton4.setBackground(new java.awt.Color(204, 255, 204));
         jButton4.setText("Remover paciente");
         jButton4.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(jButton4);
-        jButton4.setBounds(10, 340, 185, 18);
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 185, -1));
 
         jButton5.setBackground(new java.awt.Color(204, 255, 204));
         jButton5.setText("Listar Agenda");
         jButton5.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(jButton5);
-        jButton5.setBounds(10, 300, 185, 18);
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 185, -1));
 
         jButton6.setBackground(new java.awt.Color(204, 255, 204));
         jButton6.setText("Atualizar agendamento");
         jButton6.setBorder(new javax.swing.border.MatteBorder(null));
-        getContentPane().add(jButton6);
-        jButton6.setBounds(10, 220, 185, 18);
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 185, -1));
 
         jButton7.setBackground(new java.awt.Color(102, 102, 102));
         jButton7.setText("Sair");
-        getContentPane().add(jButton7);
-        jButton7.setBounds(30, 460, 49, 22);
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(204, 255, 204));
         jButton1.setText("Buscar agendamento");
@@ -95,13 +88,11 @@ public class DashboardLoginTela extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(10, 260, 185, 18);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 185, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/matriz-de-bordado-simbolo-medicina-matriz-emb.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 600, 520);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 590, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
