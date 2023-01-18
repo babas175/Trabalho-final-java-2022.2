@@ -68,7 +68,7 @@ public class PacienteClinica extends GenericMetodo {
     }
 
     public Paciente buscar_por_cpf(String cpf) throws SQLException {
-        String select = "SELECT * FROM PACIENTE WHERE cpf = ?";
+        String select = "SELECT * FROM paciente WHERE cpf = ?";
         Paciente paciente = null;
         PreparedStatement stmt = 
 			getConnection().prepareStatement(select);

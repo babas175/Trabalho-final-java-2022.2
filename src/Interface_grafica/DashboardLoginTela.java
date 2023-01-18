@@ -63,6 +63,7 @@ public class DashboardLoginTela extends javax.swing.JFrame {
             }
         });
 
+
         jButton3.setBackground(new java.awt.Color(0, 153, 0));
         jButton3.setText("Atualizar agendamento");
         jButton3.setBorder(new javax.swing.border.MatteBorder(null));
@@ -196,9 +197,8 @@ public class DashboardLoginTela extends javax.swing.JFrame {
     } 
 
     public void OnclickAgendarPaciente(){
-        agendarPacienteTela agenda = new agendarPacienteTela();
+        AgendaPacientetela agenda = new AgendaPacientetela();
         agenda.setVisible(true);
-        
     }
 
     public void OnclickAtualizarPaciente(){

@@ -18,13 +18,13 @@ import java.util.List;
 public class AgendaPaciente extends GenericMetodo {
 
     public void salvar(Agendamento agendamento) throws SQLException {
-        String insert = "INSERT INTO AGENDAMENTO(cpf, data_agendamento, status, observacao ) VALUES(?,?,?,?,)";
+        String insert = "INSERT INTO agendamento(cpf, data_agendamento, status, observacao ) VALUES(?,?,?,?)";
         save(insert, agendamento.getCpf(), agendamento.getData_agendamento(), agendamento.getStatus(), 
         agendamento.getObservacao() );
     }
    
     public Agendamento buscar_por_cpf(String cpf) throws SQLException {
-        String select = "SELECT  * FROM AGENDAMENTO WHERE cpf = ?";
+        String select = "SELECT  * FROM agendamento WHERE cpf = ?";
         Agendamento agendamento = null;
         PreparedStatement stmt = 
 			getConnection().prepareStatement(select);
