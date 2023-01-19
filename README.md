@@ -16,5 +16,6 @@ Api para gerenciar uma clinica com as opçoes siguintes:
 Tecnologia utlizada :
 - Java 
 - Banco Mysql
+- Ferramenta Netbeans
 
 
