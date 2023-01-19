@@ -1,6 +1,6 @@
 # Trabalho-final-java- Semestre 2022.2
 
-#Descrição :
+Descrição :
 
 Api para gerenciar uma clinica com as opçoes siguintes: 
 
@@ -13,7 +13,7 @@ Remover paciente do sistema
 Listar todos os agendamentos
 Buscar paciente a partir do CPF
 
-#Tecnologia utlizada :
+Tecnologia utlizada :
 Java 
 Banco Mysql
 
