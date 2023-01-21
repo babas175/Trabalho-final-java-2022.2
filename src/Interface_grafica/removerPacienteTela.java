@@ -43,6 +43,11 @@ public class removerPacienteTela extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(51, 51, 255));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("voltar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+               new DashboardLoginTela().setVisible(true);
+            }
+        });
 
         jLabel3.setText("CPF");
 
@@ -118,8 +123,15 @@ public class removerPacienteTela extends javax.swing.JFrame {
         pack();
     }
 
+    public void validaCPF(){
+        if(txtCpf == null){
+            JOptionPane.showMessageDialog(this, "CPF invalido!");
+        }
+    }
+
     
     private void onClickRemover() {
+        validaCPF();
         PacienteController paciente = new PacienteController();
         String cpf = txtCpf.getText();
         try {
@@ -141,7 +153,7 @@ public class removerPacienteTela extends javax.swing.JFrame {
        
     }
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
      
     }
 

@@ -11,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JOptionPane;
 /**
  *
  * @author lubin.lionel
@@ -31,6 +33,13 @@ public class AgendaPaciente extends GenericMetodo {
 			
         stmt.setString(1, cpf);
         ResultSet rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            JOptionPane.showMessageDialog(null, rs.getString(1)  + "Agendamento Encontrado com sucesso!!!" );
+        } else {
+            JOptionPane.showMessageDialog(null, " Desculpa o Agendamento que vc esta procurando não foi encontrado!");
+        }
+
         while (rs.next()) {
             agendamento = new Agendamento();
             agendamento.setCpf(rs.getString("cpf"));
