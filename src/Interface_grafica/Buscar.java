@@ -4,6 +4,12 @@
  */
 package Interface_grafica;
 
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+import controller.PacienteController;
+
 /**
  *
  * @author lubin.lionel
@@ -54,7 +60,12 @@ public class Buscar extends javax.swing.JFrame {
         jButton1.setBorder(new javax.swing.border.MatteBorder(null));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                try {
+                    OnClickBuscarPor_CPF();
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
         jButton1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
@@ -105,8 +116,23 @@ public class Buscar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1PropertyChange
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new DashboardLoginTela().setVisible(true);
+            
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    // private void TxtCpfValidation(){
+    //     if (jTextField1==null){
+    //         JOptionPane.showMessageDialog(this, "Campo invalido");
+    //     }
+    // }
+    
+    private void OnClickBuscarPor_CPF() throws SQLException {
+        //TxtCpfValidation();
+        String CPF = jTextField1.getText();
+        PacienteController paciente = new PacienteController();
+        paciente.buscaPorcpf(CPF);
+    }
+
+
 
     /**
      * @param args the command line arguments

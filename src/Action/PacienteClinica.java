@@ -75,8 +75,14 @@ public class PacienteClinica extends GenericMetodo {
 			
         stmt.setString(1, cpf);
         ResultSet rs = stmt.executeQuery();
+        if (rs.next()) {
+            JOptionPane.showMessageDialog(null, rs.getString(1)  + "CPF Cadastraddo com sucesso!!!" );
+        } else {
+            JOptionPane.showMessageDialog(null, " Desculpa o CPF que vc esta procurando não foi encontrado!");
+        }
 
         while (rs.next()) {
+            
             paciente = new Paciente();
             paciente.setCpf(rs.getString("cpf"));
             paciente.setNome(rs.getString("nome"));
