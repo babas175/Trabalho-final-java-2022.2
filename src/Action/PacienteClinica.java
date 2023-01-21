@@ -17,25 +17,24 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JOptionPane;
 
 public class PacienteClinica extends GenericMetodo {
 
     public void salvar(Paciente paciente) throws SQLException {
-        String insert = "INSERT INTO paciente(cpf, nome, sobrenome, endereco, data_de_nasc) VALUES(?,?,?,?,?)";
+        String insert = "INSERT INTO PACIENTE(cpf, nome, sobrenome, endereco, data_de_nasc) VALUES(?,?,?,?,?)";
         save(insert, paciente.getCpf(), paciente.getNome(), paciente.getSobrenome(), 
                 paciente.getEndereco(), paciente.getData_de_nasc() );
     }
 
     public void alterar(Paciente paciente) throws SQLException {
-        String update = "UPDATE paciente SET cpf =?, nome = ?, sobrenome = ?, endereco=?, data_de_nasc = ? WHERE cpf = ?";
+        String update = "UPDATE PACIENTE SET cpf =?, nome = ?, sobrenome = ?, endereco=?, data_de_nasc = ? WHERE cpf = ?";
         update(update, paciente.getCpf(), paciente.getNome(), paciente.getSobrenome(), 
                 paciente.getEndereco(), paciente.getData_de_nasc());
     }
 
 
     public void excluir(String cpf) throws SQLException {
-        String delete = "DELETE FROM paciente WHERE cpf = ?";
+        String delete = "DELETE FROM PACIENTE WHERE cpf = ?";
             delete(delete, cpf);
         
     }
@@ -43,7 +42,7 @@ public class PacienteClinica extends GenericMetodo {
     public List findPaciente() throws SQLException {
         List pacientes = new ArrayList();
 
-        String select = "SELECT * FROM paciente";
+        String select = "SELECT * FROM PACIENTE";
 
         PreparedStatement stmt = 
 	    getConnection().prepareStatement(select);
@@ -68,7 +67,7 @@ public class PacienteClinica extends GenericMetodo {
     }
 
     public Paciente buscar_por_cpf(String cpf) throws SQLException {
-        String select = "SELECT * FROM paciente WHERE cpf = ?";
+        String select = "SELECT * FROM PACIENTE WHERE cpf = ?";
         Paciente paciente = null;
         PreparedStatement stmt = 
 			getConnection().prepareStatement(select);

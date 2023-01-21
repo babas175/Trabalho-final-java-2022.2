@@ -82,16 +82,15 @@ public class CadastrarPaciente extends javax.swing.JFrame {
             }
         });
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setText("Voltar");
-     
-        jButton2.setBackground(new java.awt.Color(0, 255, 0));
-        jButton2.setText("Cadastrar");
-        jButton2.setBorder(new javax.swing.border.MatteBorder(null));
-           jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Cadastrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 onClickSalvar();
             }
         });
+        jButton2.setBackground(new java.awt.Color(0, 255, 0));
+        jButton2.setText("voltar");
+        jButton2.setBorder(new javax.swing.border.MatteBorder(null));
         
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,12 +183,12 @@ public class CadastrarPaciente extends javax.swing.JFrame {
         
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, 
-				"Nao foi possivel salvar contato!n" + 
+				"Nao foi possivel salvar esse paciente" + 
 				e.getLocalizedMessage()
 			);
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(this, 
-				"Data possui formato inválido!n" + 
+				"Cadastro invalido !" + 
 				e.getLocalizedMessage()
 		);
         }

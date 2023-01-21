@@ -1,11 +1,10 @@
 package controller;
 
 import model.Agendamento;
-import javax.swing.*;
 import Action.AgendaPaciente;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.List;
+
 
 public class AgendamentoController {
 
