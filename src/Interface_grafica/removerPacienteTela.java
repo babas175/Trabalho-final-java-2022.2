@@ -4,10 +4,15 @@
  */
 package Interface_grafica;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
+import Action.Conexao;
 import controller.PacienteController;
 
 
@@ -43,11 +48,6 @@ public class removerPacienteTela extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(51, 51, 255));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("voltar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-               new DashboardLoginTela().setVisible(true);
-            }
-        });
 
         jLabel3.setText("CPF");
 
@@ -123,23 +123,27 @@ public class removerPacienteTela extends javax.swing.JFrame {
         pack();
     }
 
-    public void validaCPF(){
-        if(txtCpf == null){
-            JOptionPane.showMessageDialog(this, "CPF invalido!");
-        }
-    }
-
     
     private void onClickRemover() {
-        validaCPF();
         PacienteController paciente = new PacienteController();
         String cpf = txtCpf.getText();
+       
         try {
-            paciente.excluir(cpf);
-            JOptionPane.showMessageDialog(this, "Contato excluido com sucesso!");
-            clearFields();
-            DashboardLoginTela agendaTela = new DashboardLoginTela();
-            agendaTela.setVisible(true);
+            Connection conexao = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/clinica",
+                        "root", "");
+            PreparedStatement st = (PreparedStatement)  conexao
+            .prepareStatement("Select cpf from paciente where cpf=? ");
+            st.setString(1, cpf);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()){
+                paciente.excluir(cpf);
+                JOptionPane.showMessageDialog(this, "Paciente excluido com sucesso!");
+                clearFields();
+                DashboardLoginTela agendaTela = new DashboardLoginTela();
+                agendaTela.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Esse paciente nao foi localizado !");
+            }
             
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, 
@@ -153,7 +157,7 @@ public class removerPacienteTela extends javax.swing.JFrame {
        
     }
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
      
     }
 
@@ -177,9 +181,7 @@ public class removerPacienteTela extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(removerPacienteTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
+     
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new removerPacienteTela().setVisible(true);

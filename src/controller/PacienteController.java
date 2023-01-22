@@ -61,4 +61,6 @@ public class PacienteController {
         PacienteClinica paciente = new PacienteClinica();
         return paciente.buscar_por_cpf(cpf);
     }
+
+    
 }
