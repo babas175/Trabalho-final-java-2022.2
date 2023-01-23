@@ -140,7 +140,7 @@ public class AgendaPacientetela extends javax.swing.JFrame {
             agendaTela.setVisible(true);
             
         } catch (SQLException e){
-            JOptionPane.showMessageDialog(this, "Não foi posivel realizar o seu agendamento!" + e.getLocalizedMessage()
+            JOptionPane.showMessageDialog(this, "Não foi posivel realizar o seu agendamento esse paciente nao foi cadastrado ! " 
             );
         } catch (ParseException e){
             JOptionPane.showMessageDialog(this, "Paciente não encontrado!!!" +

@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
-import Action.Conexao;
+
 import controller.PacienteController;
 
 
@@ -134,8 +134,8 @@ public class removerPacienteTela extends javax.swing.JFrame {
             PreparedStatement st = (PreparedStatement)  conexao
             .prepareStatement("Select cpf from paciente where cpf=? ");
             st.setString(1, cpf);
-            ResultSet rs = st.executeQuery();
-            if (rs.next()){
+            ResultSet resultado = st.executeQuery();
+            if (resultado.next()){
                 paciente.excluir(cpf);
                 JOptionPane.showMessageDialog(this, "Paciente excluido com sucesso!");
                 clearFields();
@@ -143,12 +143,11 @@ public class removerPacienteTela extends javax.swing.JFrame {
                 agendaTela.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Esse paciente nao foi localizado !");
-            }
-            
+            }       
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, 
-				"Nao foi possivel excluir esse paciente" + 
-				e.getLocalizedMessage()
+				"Nao foi possivel excluir esse paciente Porque ele tem uma consulta ainda que nao foi realizada  !" 
+				
 			);
         }
     }
@@ -157,10 +156,7 @@ public class removerPacienteTela extends javax.swing.JFrame {
        
     }
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-     
-    }
-
+  
     /**
      * @param args the command line arguments
      */

@@ -160,7 +160,9 @@ public class CadastroMedico extends javax.swing.JFrame {
             medico.salvar(jFormattedTextField1.getText(), jPasswordField1.getText(), jFormattedTextField2.getText());
             JOptionPane.showMessageDialog(this, "Medico salvo com sucesso!");
             clearFields();
-            
+            PaginaDeBemVindo pagina = new PaginaDeBemVindo();
+            pagina.setVisible(true);
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, 
 				"Nao foi possivel cadastrar esse medico" + 

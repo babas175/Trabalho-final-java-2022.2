@@ -6,11 +6,9 @@ package controller;
 
 import Action.PacienteClinica;
 import model.Paciente;
-
-import javax.swing.*;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.List;
+
 
 public class PacienteController {
      public void salvar(String cpf, String nome, String sobrenome, String endereco, String data_de_nasc) 
@@ -38,19 +36,6 @@ public class PacienteController {
         paciente.setData_de_nasc(data_de_nasc);
 
        new PacienteClinica().alterar(paciente);
-    }
-
-    public List listar() {
-        PacienteClinica pacienteClinica = new PacienteClinica();
-        try {
-            return pacienteClinica.findPaciente();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, 
-				"Nao foi possivel localizado os dados" + 
-				e.getLocalizedMessage()
-			);
-        }
-        return null;
     }
 
     public void excluir(String cpf) throws SQLException {

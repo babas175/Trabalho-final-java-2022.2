@@ -187,13 +187,13 @@ public class AtualizarPacientes extends javax.swing.JFrame {
             Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/clinica",
                 "root", "");
 
-            PreparedStatement st = (PreparedStatement) connection
-                .prepareStatement("Update paciente2 set cpf =?, nome = ?, sobrenome = ?, endereco=?, data_de_nasc = ? where cpf = ?");
+            PreparedStatement st = (PreparedStatement) connection.prepareStatement("update paciente set cpf =?, nome =?, sobrenome =?, endereco=?, data_de_nasc =? where cpf =?");
             st.setString(1, cpf);
             st.setString(2, nome);
             st.setString(3, sobrenome);
             st.setString(4, endereco);
             st.setString(5, data_nasc);
+            
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 JOptionPane.showMessageDialog(this, "Atualizaçao feita com sucesso ! ");

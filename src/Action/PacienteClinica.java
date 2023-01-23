@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
+import Interface_grafica.DashboardLoginTela;
+
 
 public class PacienteClinica extends GenericMetodo {
 
@@ -40,46 +42,23 @@ public class PacienteClinica extends GenericMetodo {
         
     }
 
-    public List findPaciente() throws SQLException {
-        List pacientes = new ArrayList();
-
-        String select = "SELECT * FROM paciente";
-
-        PreparedStatement stmt = 
-	    getConnection().prepareStatement(select);
-			
-        ResultSet rs = stmt.executeQuery();
-
-        while (rs.next()) {
-            Paciente paciente = new Paciente();
-            paciente.setCpf(rs.getString("cpf"));
-            paciente.setNome(rs.getString("nome"));
-            paciente.setSobrenome(rs.getString("sobrenome"));
-            paciente.setEndereco(rs.getString("endereco"));
-            paciente.setData_de_nasc(rs.getString("data_de_nasc"));
-            pacientes.add(paciente);
-        }
-
-        rs.close();
-        stmt.close();
-        getConnection().close();
-
-        return pacientes;
-    }
 
     public Paciente buscar_por_cpf(String cpf) throws SQLException {
-        String select = "SELECT * FROM paciente WHERE cpf = ?";
+        String select = "SELECT cpf, nome, sobrenome, endereco, data_de_nasc FROM paciente WHERE cpf = ?";
         Paciente paciente = null;
         PreparedStatement stmt = 
 			getConnection().prepareStatement(select);
 			
         stmt.setString(1, cpf);
         
+        
         ResultSet rs = stmt.executeQuery();
         if (rs.next()) {
-            JOptionPane.showMessageDialog(null, rs.getString(1)  + "CPF encontrado com sucesso!!!" );
+            JOptionPane.showMessageDialog(null, "Paciente com os dados seguintes:   "+ "CPF: "+rs.getString(1) +" | "+ "Nome: "+rs.getString(2)+" | " + "Sobrenome: "+rs.getString(3)+" | "+"Endereço: " + rs.getString(4)+" | "+"Data De Nasc: "+ rs.getString(5) );
+            DashboardLoginTela dash = new DashboardLoginTela();
+            dash.setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(null, " Desculpa o CPF que vc esta procurando não foi encontrado!");
+            JOptionPane.showMessageDialog(null, " Desculpa nao existe paciente com esse CPF !");
         }
 
         while (rs.next()) {
