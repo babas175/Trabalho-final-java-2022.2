@@ -10,7 +10,6 @@ Api para gerenciar uma clinica com as opçoes siguintes:
 - Agendar consulta para paciente 
 - Buscar Agendamento a partir do CPF
 - Remover paciente do sistema
-- Listar todos os agendamentos
 - Buscar paciente a partir do CPF
 
 Tecnologia utlizada :
