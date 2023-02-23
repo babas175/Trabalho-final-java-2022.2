@@ -13,7 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public abstract class GenericMetodo {
-    private Connection connection;
+    protected Connection connection;
 
     protected GenericMetodo () {
         this.connection = Conexao.getConnection();
